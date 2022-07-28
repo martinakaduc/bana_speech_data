@@ -20,10 +20,11 @@ def download(region_tag, word):
         dir = os.path.join(bana_kt, word)
 
     elif region_tag == "GL":
-        return abort(404)
+        dir = os.path.join(bana_gl, word)
     else:
         return abort(404)
 
+    dir = dir.strip()
     list_files = os.listdir(dir)
     fn = random.choice(list_files)
 
